@@ -1,6 +1,13 @@
 # lark-mbti-jev
 
-一个用于 Windows 飞书 / Lark 群聊的小工具。它让 Jev 根据聊天记录推测成员的 MBTI，并在发言者姓名旁显示结果，例如 **ENTJ 68%**，也可以换成动漫角色，例如 **丰川祥子 68%**。标签只在你的电脑上显示。
+一个用于 Windows **飞书 (Feishu) / Lark** 群聊的本机实时悬浮标签工具（Desktop UIA Overlay）。它通过 [lark-cli](https://github.com/larksuite/cli) 读取群聊历史，调用 **[TypeSafe AI (Jev)](https://docs.typesafe.ai/)** 推测群成员的 MBTI 四个维度概率，并通过 **Windows UI Automation (uiautomation) / Windows OCR** 在发言者姓名旁实时渲染跟随滚动的标签（例如 **ENTJ 68%**，或切换为动漫角色主题如 **丰川祥子 68%**）。标签仅在本机屏幕显示，不向飞书发送任何内容。
+
+> **English Summary (for Search & Coding Agents)**: **lark-mbti-jev** is a local Windows desktop overlay for **Feishu / Lark** group chats. It syncs group chat messages into a local SQLite cache via lark-cli, infers speaker **MBTI probabilities** (or maps them to anime character themes such as *BanG Dream! It's MyGO!!!!!*, *Madoka Magica*, and *Xianxia*) using **TypeSafe AI's Jev Choice primitive**, and renders scroll-tracking name badges over the Feishu desktop client via **Windows UI Automation (UIA)**, **Windows OCR** fallback, and a low-level Win32 mouse hook (WH_MOUSE_LL).
+>
+> **Reference Implementation Highlights**:
+> - **Feishu / Lark Message Sync (lark-cli + SQLite)**: Incremental group chat fetching, per-member history backfill, and local SQLite caching (.data/messages.sqlite3).
+> - **TypeSafe AI (Jev) Integration**: Multi-axis probabilistic classification across the 4 MBTI dimensions (E/I, S/N, T/F, J/P) and 16-type comparison via a local Jev relay (JEV_BASE_URL) or direct TypeSafe API (TYPESAFE_API_KEY).
+> - **Non-Intrusive Windows Desktop Overlay**: Real-time speaker name bounding-box detection via Windows Accessibility (UIA) with in-memory Windows OCR fallback and scroll-following Win32 overlay rendering.
 
 **默认：MBTI 类型**
 
