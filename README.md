@@ -129,3 +129,12 @@ Jev 同时判断四个 MBTI 维度，并比较 16 种类型。`INTP 65%` 表示�
 `tools/render_demo.py` 用上面的动画对话生成 `docs/demo-mbti.png`（MBTI）和 `docs/demo-girl-bands.png`（少女乐队主题），不读取个人聊天，也不调用 Jev。默认使用系统中文字体，可用 `--font` 指定。
 
 接口参考：[TypeSafe API](https://docs.typesafe.ai/api)、[Choice](https://docs.typesafe.ai/primitives/choice)、[Windows OCR](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/OCR)、[鼠标监听](https://learn.microsoft.com/en-us/windows/win32/winmsg/lowlevelmouseproc)。
+
+## Related Projects
+
+- [AgentCompass](https://github.com/akiiwa-games/AgentCompass) — 按任务能力需求和订阅额度选择 AI worker 的路由器。
+- [usage-float](https://github.com/akiiwa-games/usage-float) — Windows AI 订阅额度悬浮窗与独立采集器。
+
+## License
+
+[MIT License](LICENSE) · Copyright (c) 2026 akiiwa-games.

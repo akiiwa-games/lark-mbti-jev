@@ -126,7 +126,8 @@ class AppCacheTests(unittest.TestCase):
         self.app.scan_request = Mock()
         self.app.events.put(('scan', 1, {'chat_id': 'oc_test', 'scroll_revision': 0, 'state': state,
                                         'hwnd': 42, 'scale': 1, 'anchors': anchors}))
-        with patch('feishu_mbti.app.foreground_feishu', return_value=42):
+        with patch('feishu_mbti.app.foreground_feishu', return_value=42), \
+                patch('feishu_mbti.app.screen_overlay', return_value=False):
             self.app.tick()
 
     def test_unanalyzed_member_shows_progress_instead_of_nothing(self):

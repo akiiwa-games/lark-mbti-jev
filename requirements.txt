@@ -1,4 +1,5 @@
 Pillow>=11.2,<13
 pywin32>=308
+comtypes>=1.4
 uiautomation==2.0.29
 winocr==0.0.15
